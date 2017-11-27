@@ -15,11 +15,11 @@ protocol InfiniteScrollViewDelegate {
     func imageDownloaded()
 }
 
-class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+open class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
 
     open var imageURLs: [String]!
     open var currentIndex: Int = 0
-    open var scrollDelegate: InfiniteScrollViewDelegate?
+    var scrollDelegate: InfiniteScrollViewDelegate?
     
     fileprivate var onceOnly: Bool = false
     fileprivate var swipeTimer: Timer!
@@ -36,7 +36,7 @@ class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICollecti
         initialize()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         initialize()
@@ -97,7 +97,7 @@ class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICollecti
     }
     
     //MARK: Collection View Delegate + Datasource
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if !onceOnly {
             let count = imageURLs.count
             let index = currentIndex % count
@@ -109,7 +109,7 @@ class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICollecti
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
         if let subView = cell.viewWithTag(1) {
@@ -126,33 +126,33 @@ class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageURLs.count * maxPage
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.row % imageURLs.count
         scrollDelegate?.didSelectIndex(index)
     }
     
     //MARK: Collection View Flow Layout
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: bounds.width, height: bounds.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+    public func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         let offsetX = CGFloat(currentIndex) * bounds.width
         return CGPoint(x: offsetX, y: 0)
     }
     
     //MARK: ScrollView Delegate
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //User scroll
         updateScrolling(scrollView)
         startTimer()
     }
     
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         //Auto scroll
         updateScrolling(scrollView)
     }
@@ -177,7 +177,7 @@ class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICollecti
         }
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         stopTimer()
     }
     

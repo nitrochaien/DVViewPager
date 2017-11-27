@@ -1,5 +1,5 @@
 PODS:
-  - DVViewPager (0.1.0)
+  - DVViewPager (1.1)
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DVViewPager: 59e3271c9fd145cb6176261b295a73afcd2fb56b
+  DVViewPager: 2f50d82e28f3b753466c1b01197fbb29b9d52807
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
 
 PODFILE CHECKSUM: 20b85086e3d40297b481f010ab687efa007be8ef
