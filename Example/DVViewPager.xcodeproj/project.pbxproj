@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		EDCFFBDA1FCC6C8F00BC10AE /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCFFBDB1FCC6C8F00BC10AE /* SDWebImage.framework */; };
 		EE96ED43A127CB53645097F4 /* Pods_DVViewPager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552259D048E627AAA13FCED1 /* Pods_DVViewPager_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		138242534D26E66193FF7D14 /* DVViewPager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DVViewPager.podspec; path = ../DVViewPager.podspec; sourceTree = "<group>"; };
+		138242534D26E66193FF7D14 /* DVViewPager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DVViewPager.podspec; path = ../DVViewPager.podspec; sourceTree = "<group>"; };
 		2D64BB76FE511BD7BB8218C1 /* Pods-DVViewPager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVViewPager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DVViewPager_Tests/Pods-DVViewPager_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		552259D048E627AAA13FCED1 /* Pods_DVViewPager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVViewPager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACE51AFB9204008FA782 /* DVViewPager_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVViewPager_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		C38400472CAC59976D35CD0E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C38400472CAC59976D35CD0E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D198AB3DFA1FEF515A35606F /* Pods-DVViewPager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVViewPager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DVViewPager_Tests/Pods-DVViewPager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D566AAE26FB2CF22D4FB0B34 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D566AAE26FB2CF22D4FB0B34 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EDCFFBDB1FCC6C8F00BC10AE /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCFFBDA1FCC6C8F00BC10AE /* SDWebImage.framework in Frameworks */,
 				EE96ED43A127CB53645097F4 /* Pods_DVViewPager_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +96,7 @@
 		BFD5CCCF3DC7D2A7E37C1DEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDCFFBDB1FCC6C8F00BC10AE /* SDWebImage.framework */,
 				552259D048E627AAA13FCED1 /* Pods_DVViewPager_Tests.framework */,
 			);
 			name = Frameworks;
@@ -131,12 +135,9 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4D947669QT;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -197,10 +198,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DVViewPager_Tests/Pods-DVViewPager_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DVViewPager/DVViewPager.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DVViewPager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,9 +342,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D198AB3DFA1FEF515A35606F /* Pods-DVViewPager_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4D947669QT;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(SRCROOT)/DVViewPager",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -351,6 +355,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -360,14 +365,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D64BB76FE511BD7BB8218C1 /* Pods-DVViewPager_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4D947669QT;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(SRCROOT)/DVViewPager",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

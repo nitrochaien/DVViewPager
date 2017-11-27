@@ -1,6 +1,5 @@
 use_frameworks!
 target 'DVViewPager_Tests' do
   pod 'DVViewPager', :path => '../'
-  
-  
+pod 'SDWebImage', '~> 4.0'
 end

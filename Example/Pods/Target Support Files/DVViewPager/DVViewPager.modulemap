@@ -1,0 +1,6 @@
+framework module DVViewPager {
+  umbrella header "DVViewPager-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,21 @@
+PODS:
+  - DVViewPager (0.1.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+
+DEPENDENCIES:
+  - DVViewPager (from `../`)
+  - SDWebImage (~> 4.0)
+
+EXTERNAL SOURCES:
+  DVViewPager:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DVViewPager: 59e3271c9fd145cb6176261b295a73afcd2fb56b
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+
+PODFILE CHECKSUM: 20b85086e3d40297b481f010ab687efa007be8ef
+
+COCOAPODS: 1.4.0.beta.2
