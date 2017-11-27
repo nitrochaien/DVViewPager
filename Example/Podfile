@@ -1,0 +1,6 @@
+use_frameworks!
+target 'DVViewPager_Tests' do
+  pod 'DVViewPager', :path => '../'
+  
+  
+end
