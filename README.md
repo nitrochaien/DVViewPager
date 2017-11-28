@@ -1,15 +1,16 @@
 # DVViewPager
 
-[![CI Status](http://img.shields.io/travis/vunam0502@gmail.com/DVViewPager.svg?style=flat)](https://travis-ci.org/vunam0502@gmail.com/DVViewPager)
 [![Version](https://img.shields.io/cocoapods/v/DVViewPager.svg?style=flat)](http://cocoapods.org/pods/DVViewPager)
 [![License](https://img.shields.io/cocoapods/l/DVViewPager.svg?style=flat)](http://cocoapods.org/pods/DVViewPager)
 [![Platform](https://img.shields.io/cocoapods/p/DVViewPager.svg?style=flat)](http://cocoapods.org/pods/DVViewPager)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Introduction
+- Android's ViewPager implemented in Swift 4
+- Load images from URLs (using [SDWebImage](https://github.com/rs/SDWebImage))
 
 ## Requirements
+- Xcode 9+
+- iOS 10+
 
 ## Installation
 
@@ -20,10 +21,23 @@ it, simply add the following line to your Podfile:
 pod 'DVViewPager'
 ```
 
-## Author
+## How to use
+```
+let width = UIScreen.main.bounds.width
+let height = width * 9 / 16
 
-vunam0502@gmail.com, vunam0502@gmail.com
+let infiniteScrollView = InfiniteScrollView(frame: CGRect(x: 0, y: 0, width: width, height: height), collectionViewLayout: UICollectionViewFlowLayout())
+infiniteScrollView.backgroundColor = .green
+infiniteScrollView.setData(myList)
+
+view.addSubview(infiniteScrollView)
+```
+
+## Note
+`width` property must be Srceen Width
+
+## Author
+vunam0502@gmail.com
 
 ## License
-
 DVViewPager is available under the MIT license. See the LICENSE file for more info.
