@@ -25,7 +25,7 @@ open class InfiniteScrollView: UICollectionView, UICollectionViewDelegate, UICol
     fileprivate var swipeTimer: Timer!
     fileprivate let maxPage = 512
     
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    override public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         
         let flowLayout = layout as! UICollectionViewFlowLayout
